@@ -1,13 +1,16 @@
 package com.psx.roomcontacts;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
+import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.psx.roomcontacts.dao.ContactsDao;
+import com.psx.roomcontacts.entities.Contact;
 
+@Database(entities = {Contact.class}, version = 1)
 public abstract class ContactsDatabase extends RoomDatabase {
     private static ContactsDatabase INSTANCE;
 

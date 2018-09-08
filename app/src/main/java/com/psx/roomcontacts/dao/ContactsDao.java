@@ -22,15 +22,15 @@ public interface ContactsDao {
     Contact[] getAnyContact();
 
     @Delete
-    void deleteWord();
+    void deleteContact(Contact contact);
 
     @Query("SELECT * FROM contacts_table WHERE phoneNumber = :phoneNumber")
     Contact getContactFromPhoneNumber(String phoneNumber);
 
     @Query("SELECT * FROM contacts_table ORDER BY firstName ASC")
-    DataSource.Factory<String, Contact> getAllContacts();
+    DataSource.Factory<Integer, Contact> getAllContacts();
 
     @Query("SELECT * FROM contacts_table ORDER BY lastName ASC")
-    DataSource.Factory<String, Contact> getAllContactsByLastName();
+    DataSource.Factory<Integer, Contact> getAllContactsByLastName();
 
 }

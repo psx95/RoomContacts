@@ -8,7 +8,8 @@ import android.support.annotation.NonNull;
 @Entity(tableName = "contacts_table")
 public class Contact {
 
-    @PrimaryKey
+    @NonNull
+    @PrimaryKey(autoGenerate = false)
     private String phoneNumber;
     @NonNull
     private String firstName;
@@ -29,7 +30,6 @@ public class Contact {
         this.lastName = lastName;
     }
 
-    @Ignore
     public Contact(@NonNull String phoneNumber, @NonNull String firstName, @NonNull String lastName, @NonNull String email) {
         this(phoneNumber, firstName, lastName);
         this.email = email;
