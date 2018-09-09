@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RoomContacts</string>
+    <string name="save_contact">Save Contact</string>
 </resources>
